@@ -11,7 +11,7 @@ import Learning from "./pages/Learning";
 import Skills from "./pages/Skills";
 import Messages from "./pages/Messages";
 import Feedback from "./pages/Feedback";  
-import Admin from "./pages/Admin";  
+import Admin from "./pages/admin";  
 import Supervisor from "./pages/Supervisor"; 
 import TestTaking from "./pages/TestTaking";
 
