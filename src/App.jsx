@@ -91,7 +91,7 @@ function AppRoutes() {
   }
 />
 
-        {/* ✅ ADDED FEEDBACK ROUTE */}
+        
         <Route
           path="/feedback"
           element={
@@ -127,7 +127,7 @@ function AppRoutes() {
   );
 }
 
-/* ================= ROOT ================= */
+/*  ROOT */
 export default function App() {
   return (
     <AuthProvider>

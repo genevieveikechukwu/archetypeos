@@ -36,78 +36,76 @@ api.interceptors.response.use(
 );
 
 // ==================== AUTH ====================
-export const login = (email, password) => api.post('/auth/login', { email, password });
-export const register = (userData) => api.post('/auth/register', userData);
-export const getProfile = () => api.get('/auth/me');
+export const login = (email, password) => api.post('/api/auth/login', { email, password });
+export const register = (userData) => api.post('/api/auth/register', userData);
+export const getProfile = () => api.get('/api/auth/me');
 export const changePassword = (currentPassword, newPassword) => 
-  api.post('/auth/change-password', { current_password: currentPassword, new_password: newPassword });
+  api.post('/api/auth/change-password', { current_password: currentPassword, new_password: newPassword });
 
 // ==================== LEARNING ====================
-export const clockIn = () => api.post('/learning/clock-in');
-export const clockOut = (reflection) => api.post('/learning/clock-out', { reflection_text: reflection });
-export const getTodaySessions = () => api.get('/learning/today');
-export const getLearningHistory = (params) => api.get('/learning/history', { params });
-export const getStreak = () => api.get('/learning/streak');
-export const getWeeklyReport = () => api.get('/learning/weekly-report');
-export const getTeamSummary = () => api.get('/learning/team-summary');
+export const clockIn = () => api.post('/api/learning/clock-in');
+export const clockOut = (reflection) => api.post('/api/learning/clock-out', { reflection_text: reflection });
+export const getTodaySessions = () => api.get('/api/learning/today');
+export const getLearningHistory = (params) => api.get('/api/learning/history', { params });
+export const getStreak = () => api.get('/api/learning/streak');
+export const getWeeklyReport = () => api.get('/api/learning/weekly-report');
+export const getTeamSummary = () => api.get('/api/learning/team-summary');
 
 // ==================== COURSES ====================
-export const getCourses = (params) => api.get('/courses', { params });
-export const getCourse = (id) => api.get(`/courses/${id}`);
-export const createCourse = (data) => api.post('/courses', data);
-export const updateCourse = (id, data) => api.put(`/courses/${id}`, data);
-export const deleteCourse = (id) => api.delete(`/courses/${id}`);
-export const enrollInCourse = (id) => api.post(`/courses/${id}/enroll`);
-export const getMyEnrollments = () => api.get('/courses/my/enrollments');
+export const getCourses = (params) => api.get('/api/courses', { params });
+export const getCourse = (id) => api.get(`/api/courses/${id}`);
+export const createCourse = (data) => api.post('/api/courses', data);
+export const updateCourse = (id, data) => api.put(`/api/courses/${id}`, data);
+export const deleteCourse = (id) => api.delete(`/api/courses/${id}`);
+export const enrollInCourse = (id) => api.post(`/api/courses/${id}/enroll`);
+export const getMyEnrollments = () => api.get('/api/courses/my/enrollments');
 export const updateCourseProgress = (id, progress) => 
-  api.put(`/courses/${id}/progress`, { progress_percentage: progress });
+  api.put(`/api/courses/${id}/progress`, { progress_percentage: progress });
 
 // ==================== DASHBOARDS ====================
-export const getLearnerDashboard = () => api.get('/dashboard/learner');
-export const getSupervisorDashboard = () => api.get('/dashboard/supervisor');
-export const getAdminDashboard = () => api.get('/dashboard/admin');
-export const exportData = (type) => api.get(`/dashboard/export/${type}`);
+export const getLearnerDashboard = () => api.get('/api/dashboard/learner');
+export const getSupervisorDashboard = () => api.get('/api/dashboard/supervisor');
+export const getAdminDashboard = () => api.get('/api/dashboard/admin');
+export const exportData = (type) => api.get(`/api/dashboard/export/${type}`);
 
 // ==================== MESSAGING & KUDOS ====================
-export const sendMessage = (data) => api.post('/mentorship/messages', data);
-export const getMessages = (params) => api.get('/mentorship/messages', { params });
-export const getUnreadCount = () => api.get('/mentorship/messages/unread/count');
-export const sendKudos = (data) => api.post('/mentorship/kudos', data);
-export const getKudosReceived = () => api.get('/mentorship/kudos/received');
-export const getKudosGiven = () => api.get('/mentorship/kudos/given');
-export const getConversations = () => api.get('/mentorship/conversations');
-
+export const sendMessage = (data) => api.post('/api/mentorship/messages', data);
+export const getMessages = (params) => api.get('/api/mentorship/messages', { params });
+export const getUnreadCount = () => api.get('/api/mentorship/messages/unread/count');
+export const sendKudos = (data) => api.post('/api/mentorship/kudos', data);
+export const getKudosReceived = () => api.get('/api/mentorship/kudos/received');
+export const getKudosGiven = () => api.get('/api/mentorship/kudos/given');
+export const getConversations = () => api.get('/api/mentorship/conversations');
 // ==================== JOURNAL ====================
-export const saveJournal = (data) => api.post('/mentorship/journal', data);
-export const getJournals = (params) => api.get('/mentorship/journal', { params });
+export const saveJournal = (data) => api.post('/api/mentorship/journal', data);
+export const getJournals = (params) => api.get('/api/mentorship/journal', { params });
 
 // ==================== SKILLS ====================
-export const getSkills = () => api.get('/skills');
-export const createSkill = (data) => api.post('/skills', data);
-export const linkSkillToCourse = (data) => api.post('/skills/course-link', data);
-export const calculateUserSkills = (userId) => api.post(`/skills/calculate/${userId}`);
-export const getUserSkills = (userId) => api.get(`/skills/user/${userId}`);
-export const searchUsersBySkill = (params) => api.get('/skills/search', { params });
-export const getSkillGraph = (userId) => api.get(`/skills/graph/${userId}`);
-
+export const getSkills = () => api.get('/api/skills');
+export const createSkill = (data) => api.post('/api/skills', data);
+export const linkSkillToCourse = (data) => api.post('/api/skills/course-link', data);
+export const calculateUserSkills = (userId) => api.post(`/api/skills/calculate/${userId}`);
+export const getUserSkills = (userId) => api.get(`/api/skills/user/${userId}`);
+export const searchUsersBySkill = (params) => api.get('/api/skills/search', { params });
+export const getSkillGraph = (userId) => api.get(`/api/skills/graph/${userId}`);
 
 // Assignments
-export const submitAssignment = (formData) => api.post('/assignments/submit', formData, {
+export const submitAssignment = (formData) => api.post('/api/assignments/submit', formData, {
   headers: { 'Content-Type': 'multipart/form-data' }
 });
-export const getMyAssignments = () => api.get('/assignments/my-assignments');
-export const getAssignmentsToReview = (status) => api.get('/assignments/to-review/all', { params: { status } });
-export const reviewAssignment = (assignmentId, data) => api.put(`/assignments/${assignmentId}/review`, data);
-export const deleteAssignment = (assignmentId) => api.delete(`/assignments/${assignmentId}`);
+export const getMyAssignments = () => api.get('/api/assignments/my-assignments');
+export const getAssignmentsToReview = (status) => api.get('/api/assignments/to-review/all', { params: { status } });
+export const reviewAssignment = (assignmentId, data) => api.put(`/api/assignments/${assignmentId}/review`, data);
+export const deleteAssignment = (assignmentId) => api.delete(`/api/assignments/${assignmentId}`);
 
 // ==================== TESTS ====================
-export const createTest = (data) => api.post('/tests', data);
-export const getTest = (id) => api.get(`/tests/${id}`);
-export const startTestAttempt = (testId) => api.post(`/tests/${testId}/start`);
+export const createTest = (data) => api.post('/api/tests', data);
+export const getTest = (id) => api.get(`/api/tests/${id}`);
+export const startTestAttempt = (testId) => api.post(`/api/tests/${testId}/start`);
 export const submitTestAnswers = (attemptId, answers) => 
-  api.post(`/tests/attempts/${attemptId}/submit`, { answers });
-export const gradeTest = (attemptId, data) => api.post(`/tests/attempts/${attemptId}/grade`, data);
-export const getPendingTests = () => api.get('/tests/pending/grading');
+  api.post(`/api/tests/attempts/${attemptId}/submit`, { answers });
+export const gradeTest = (attemptId, data) => api.post(`/api/tests/attempts/${attemptId}/grade`, data);
+export const getPendingTests = () => api.get('/api/tests/pending/grading');
 
 // ==================== ADMIN - USER MANAGEMENT ====================
 export const getUsers = () => api.get('/admin/users');
